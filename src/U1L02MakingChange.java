@@ -15,7 +15,28 @@ public class U1L02MakingChange {
 		//}
 		//pennies = money * 10
 		//JOptionPane.showMessageDialog(null, "you need " +
-		// nickels + " nickels, and " + pennies) 
+		// nickels + " nickels, and " + pennies + "pennies"); 
+		
+		//define variables for amounts of each coin
+		int nickels = 0;
+		int pennies = 0;
+		//get input from user (change to usable variable)
+		String answer = JOptionPane.showInputDialog("Enter a monetary value (ex: 1.56)");
+		double cash = Double.parseDouble(answer);
+		pennies = (int)(cash * 100); 
+		// we use double when we deal with integers
+		
+		//loop subtracting coin amount until money < coin amount
+		while (pennies > 5) {
+			nickels++; 
+			pennies -= 5;
+			
+		}
+		//print answer
+		JOptionPane.showMessageDialog(null, cash + " is " + nickels + " nickels " + 
+		pennies + " pennies");
+		
+		
 
 	}
 
