@@ -19,14 +19,23 @@ public class U1L02MakingChange {
 		// we use double when we deal with integers
 		
 		//loop subtracting coin amount until money < coin amount
-		while (pennies > 5) {
-			nickels++; 
-			pennies -= 5;
+		while (pennies >= 25) {
+			quarters++; 
+			pennies -= 25;
 			
 		}
+		while (pennies >= 10) {
+			dimes++;
+			pennies -= 10; 
+
+		}
+		while (pennies >= 5) {
+			nickels++;
+			pennies-= 5;
+		}
 		//print answer
-		JOptionPane.showMessageDialog(null, cash + " is " + nickels + " nickels " + 
-		pennies + " pennies");
+		JOptionPane.showMessageDialog(null, cash + " is " + quarters + " quarters " + 
+		dimes + " dimes " + nickels + " nickels " + pennies + " pennies" );
 		
 	
 		//Mathematical Method:
