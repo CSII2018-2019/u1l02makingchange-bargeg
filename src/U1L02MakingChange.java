@@ -12,30 +12,57 @@ public class U1L02MakingChange {
 		int dimes = 0; 
 		int nickels = 0;
 		int pennies = 0;
-		//get input from user (change to usable variable)
+		int quarters2 = 0;
+		int dimes2 = 0;
+		int nickels2 = 0;
+		int pennies2 = 0; 
+		int remaining = 0;
+		int remaining2 = 0; 
 		String answer = JOptionPane.showInputDialog("Enter a monetary value (ex: 1.56)");
+		String answer2 = JOptionPane.showInputDialog("Enter another monetary value");
 		double cash = Double.parseDouble(answer);
-		pennies = (int)(cash * 100); 
+		double cash2 = Double.parseDouble(answer2);
+		pennies = (int)(cash * 100);
+		pennies2 = (int)(cash2 * 100); 
 		// we use double when we deal with integers
 		
-		//loop subtracting coin amount until money < coin amount
+		double average = (cash + cash2)/2;
+		
 		while (pennies >= 25) {
 			quarters++; 
 			pennies -= 25;
-			
-		}
-		while (pennies >= 10) {
+			}
+		remaining = pennies % 25;
+		
+		while (remaining >= 10) {
 			dimes++;
-			pennies -= 10; 
-
-		}
-		while (pennies >= 5) {
+			remaining -= 10;
+			}
+		
+		while (remaining >= 5) {
 			nickels++;
-			pennies-= 5;
+			remaining-= 5;
 		}
-		//print answer
+		while (pennies2 >= 25) {
+			quarters2++; 
+			pennies2 -= 25;
+			}
+		remaining2 = pennies2 % 25;
+		
+		while (remaining2 >= 10) {
+			dimes2++;
+			remaining2 -= 10;
+			}
+		
+		while (remaining2 >= 5) {
+			nickels2++;
+			remaining2 -= 5;
+		}
 		JOptionPane.showMessageDialog(null, cash + " is " + quarters + " quarters " + 
-		dimes + " dimes " + nickels + " nickels " + pennies + " pennies" );
+		dimes + " dimes " + nickels + " nickels " + remaining + " pennies" );
+		JOptionPane.showMessageDialog(null, cash2 + " is " + quarters2 + " quarters " + 
+		dimes2 + " dimes " + nickels2 + " nickels " + remaining2 + " pennies" );
+		JOptionPane.showMessageDialog(null, "The average of both amounts is: " + average);
 		
 	
 		//Mathematical Method:
